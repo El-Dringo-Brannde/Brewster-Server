@@ -1,0 +1,25 @@
+{
+  "name": "brewster-server",
+  "version": "1.0.0",
+  "description": "Brewster-Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/El-Dringo-Brannde/Brewster-Server.git"
+  },
+  "author": "Brandon Dring",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/El-Dringo-Brannde/Brewster-Server/issues"
+  },
+  "homepage": "https://github.com/El-Dringo-Brannde/Brewster-Server#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.3"
+  }
+}
