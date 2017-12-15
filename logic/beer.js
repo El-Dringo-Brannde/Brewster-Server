@@ -1,12 +1,12 @@
-var crud = require('./crud');
-module.exports = class beer extends crud{
-   constructor(mongoDB){
-      super(mongoDB, 'beer');
+var CRUD = require('./crud');
+module.exports = class beer extends CRUD{
+   constructor(mongo, mongoID){
+      super(mongo, mongoID, 'beer');
    }
 
-   addBeer(beerData){
+   addBeer(beerData, res){
       beerData.time = new Date();
-      this.create(beerData);
+      this.create(beerData, res);
    }
 
    getAllBeers(res){
