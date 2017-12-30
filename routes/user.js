@@ -13,6 +13,14 @@ module.exports = function(mongo) {
       user.addUser(req.body, res);
    });
 
+   router.get('/', (req, res) => {
+      user.read({}, res);
+   });
+
+   router.put('/', (req, res) => {
+      user.read(req.body, res);
+   });
+
 
    return router;
 };

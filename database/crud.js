@@ -15,6 +15,10 @@ module.exports = class CRUD {
 
    read(selector, res) {
       this.db.find(selector).toArray((err, succ) => {
+         for (var i of succ) {
+            if (typeof i.photo != String)
+               i.photo = i.photo.changingThisBreaksApplicationSecurity
+         } // HACK to fix changing of photo location
          res.send(succ);
       });
    }

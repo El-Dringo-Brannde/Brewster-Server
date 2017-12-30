@@ -12,6 +12,10 @@ module.exports = function(mongo) {
 
    router.get('/', (req, res) => beer.getAllBeers(res));
 
+   router.get('/:user', (req, res) => beer.read({
+      user: req.params.user
+   }, res));
+
    router.put('/', (req, res) => {
       beer.update(req.body, req.body.field, req.body.value, res);
    });

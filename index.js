@@ -18,5 +18,5 @@ db.then(mongoConnect => {
    app.use('/user', userRoutes(mongoConnect));
    // ^^^ Init routes
 
-   app.listen(3105, () => console.log('Server running on port 3105!')); // start server
+   app.listen(3333, () => console.log('Server running on port 3333!')); // start server
 });
