@@ -1,22 +1,12 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-const cors = require('cors');
-var mongo = require('mongodb');
-var db = require('./database/db')(mongo);
-var beerRoutes = require('./routes/beer');
-var userRoutes = require('./routes/user');
+const cluster = require('cluster')
+const numCPU = require('os').cpus().length
+let server = require('./server')
 
-db.then(mongoConnect => {
-   app.use(cors());
-   app.use(bodyParser.json({
-      type: 'application/json',
-      limit: '3mb'
-   }));
+if (process.env.NODE_ENV == 'production' && cluster.isMaster) {
+   for (var i = 0; i < numCPU; i++)
+      cluster.fork();
 
-   app.use('/beer', beerRoutes(mongoConnect));
-   app.use('/user', userRoutes(mongoConnect));
-   // ^^^ Init routes
-
-   app.listen(3333, () => console.log('Server running on port 3333!')); // start server
-});
+   cluster.on('online', (worker) => console.log('Worker ' + worker.process.pid + ' is online.'));
+   cluster.on('exit', (worker, code, signal) => console.log('worker ' + worker.process.pid + ' died.'));
+} else
+   new server() // start

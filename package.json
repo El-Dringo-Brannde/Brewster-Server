@@ -1,25 +1,37 @@
 {
-  "name": "brewster-server",
-  "version": "1.0.0",
-  "description": "Brewster-Server",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/El-Dringo-Brannde/Brewster-Server.git"
-  },
-  "author": "Brandon Dring",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/El-Dringo-Brannde/Brewster-Server/issues"
-  },
-  "homepage": "https://github.com/El-Dringo-Brannde/Brewster-Server#readme",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "cors": "^2.8.4",
-    "express": "^4.16.2",
-    "mongodb": "^2.2.3"
-  }
+   "name": "assignment-1-el-dringo-brannde",
+   "version": "1.0.0",
+   "description": "Brewster-Server",
+   "main": "index.js",
+   "engines": {
+      "node": "8.11.*"
+   },
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "nodemon index.js -p 3000",
+      "start": "node index.js -p 3000"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/El-Dringo-Brannde/Brewster-Server.git"
+   },
+   "author": "Brandon Dring",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/El-Dringo-Brannde/Brewster-Server/issues"
+   },
+   "homepage": "https://github.com/El-Dringo-Brannde/Brewster-Server#readme", 
+   "dependencies": {
+      "boom": "^7.2.0",
+      "command-line-args": "^5.0.2",
+      "express": "^4.16.3",
+      "express-validation": "^1.0.2",
+      "joi": "^13.1.2",
+      "joi-objectid": "^2.0.0",
+      "mongodb": "^3.0.6",
+      "uuid": "^3.2.1"
+   },
+   "devDependencies": {
+      "nodemon": "^1.17.3"
+   }
 }
